@@ -7,7 +7,8 @@ var express            = require("express"),
  LocalStrategy         = require("passport-local"),
  passportLocalMongoose = require("passport-local-mongoose");
 
-mongoose.connect("mongodb://mongo:27018/Samp_data");
+const uri = process.env.DB_URI;
+mongoose.connect(uri,{useNewUrlParser:true,useCreateIndex:true});
 // mongoose.connect("mongodb://localhost/Samp_data");
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile); 
