@@ -5,6 +5,8 @@ services:
             image: latest123/login-app
             restart: always
             build: .
+            environment:
+              DB_URI: "mongodb://mongo:27017/Samp_data"
             ports:
               - "7500:7500"
             links:
