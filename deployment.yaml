@@ -33,6 +33,8 @@ spec:
         app: ${JOB_NAME}
     spec:
       terminationGracePeriodSeconds: 10
+      nodeSelector:
+        app: system-apps
       hostname: ${JOB_NAME}
       containers:
       - name: ${JOB_NAME}
